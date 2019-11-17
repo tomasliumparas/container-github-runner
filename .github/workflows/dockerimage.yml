@@ -1,4 +1,4 @@
-name: Docker: Debian buster
+name: "Docker: Debian buster"
 
 on: [push]
 
