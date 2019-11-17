@@ -10,7 +10,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: tomasliumparas/container-github-runner/container-github-runner
+        name: tomasliumparas/container-github-runner/github-runner
         username: ${{ secrets.GITHUB_USERNAME }}
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
