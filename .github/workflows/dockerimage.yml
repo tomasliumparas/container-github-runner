@@ -1,0 +1,17 @@
+name: Docker: Debian buster
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: tomasliumparas/container-github-runner/container-github-runner
+        username: ${{ secrets.GITHUB_USERNAME }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        dockerfile: "debian-buster/Dockerfile"
