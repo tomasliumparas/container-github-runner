@@ -8,17 +8,20 @@ ENV RUNNER_WORK_DIRECTORY="_work"
 ENV RUNNER_TOKEN=""
 ENV RUNNER_REPOSITORY_URL=""
 
-# Labels.
-LABEL maintainer="me@tcardonne.fr" \
-    org.label-schema.schema-version="1.0" \
-    org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.name="tcardonne/github-runner" \
-    org.label-schema.description="Dockerized GitHub Actions runner." \
-    org.label-schema.url="https://github.com/tcardonne/docker-github-runner" \
-    org.label-schema.vcs-url="https://github.com/tcardonne/docker-github-runner" \
-    org.label-schema.vendor="Thomas Cardonne" \
-    org.label-schema.docker.cmd="docker run -it tcardonne/github-runner:latest"
+
+ENV SUMMARY="Dockerized GitHub Actions runner."
+ENV DESCRIPTION="Dockerized GitHub Actions runner. $GH_RUNNER_VERSION"
+
+LABEL summary="$SUMMARY" \
+      description="$DESCRIPTION" \
+      io.k8s.description="$DESCRIPTION" \
+      io.k8s.display-name="Github runner" \
+      io.openshift.tags="github-runner" \
+      name="tomasliumparas/github-runner" \
+      version="0.1" \
+      usage="docker run -it tcardonne/github-runner:latest" \
+      maintainer="Tomas Liumparas <tomas.liumparas@gmail.com>"
+
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y \
