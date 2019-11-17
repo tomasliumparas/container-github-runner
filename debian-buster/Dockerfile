@@ -31,6 +31,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
         curl \
         software-properties-common \
         git \
+        python3 \
+        python3-pip \
         sudo
 
 # Install Docker CLI
