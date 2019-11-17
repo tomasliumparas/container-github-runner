@@ -15,3 +15,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
         dockerfile: "debian-buster/Dockerfile"
+        workdir: debian-buster
